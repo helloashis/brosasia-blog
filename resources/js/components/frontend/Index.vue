@@ -53,17 +53,25 @@
 
 <script>
     export default{
-        name: "index",
-        state:{
-            count:50
-        },
-        getters:{
-            post(state){
-
-                return state.count;
-
+        data(){
+            return{
+                posts:{},
             }
         },
-        mutation:{}
+        methods:{
+            loadposts(){
+                axios.get('/').then((response)=>{
+                    this.posts = response.data;
+                });
+            },
+            subStringWithHtml: function(content, length, s){
+                return content.substring(0, length) + s;
+            },
+
+        },
+        mounted(){
+            this.loadposts();
+
+        }
     }
 </script>

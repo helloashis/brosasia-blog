@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller {
@@ -11,6 +12,7 @@ class SiteController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
+		$posts = Post::with('category', 'subcategory', 'user')->latest()->get();
 		return view('app');
 	}
 
@@ -19,8 +21,10 @@ class SiteController extends Controller {
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function create() {
-		//
+	public function allPost() {
+		$posts = Post::with('category', 'subcategory', 'user')->latest()->get();
+
+		return response()->json($posts, 202);
 	}
 
 	/**
@@ -39,8 +43,10 @@ class SiteController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id) {
-		//
+	public function show($slug) {
+		$post = Post::with('category', 'subcategory', 'user')->where('slug', $slug)->first();
+
+		return response()->json($post, 202);
 	}
 
 	/**

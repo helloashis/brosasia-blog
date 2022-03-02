@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('category', 'App\Http\Controllers\CategoryController');
+Route::resource('sub-category', 'App\Http\Controllers\SubCategoryController');
+Route::resource('post', 'App\Http\Controllers\PostController');

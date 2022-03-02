@@ -6,14 +6,18 @@ Vue.use(VueRouter)
 
 
 import Index from './components/frontend/Index.vue';
+import Posts from './components/frontend/Posts.vue';
 import About from './components/frontend/About.vue';
 import Contact from './components/frontend/Contact.vue';
+import single_post from './components/frontend/single-post.vue';
 
 //    Vue Routes
 const router = new VueRouter({
     mode:'history',
     routes:[
         { path: '/', component: Index },
+        { path: '/allposts', component: Posts },
+        { path: '/post/details/:slug', component: single_post },
         { path: '/about', component: About },
         { path: '/contact-us', component: Contact },
     ]
