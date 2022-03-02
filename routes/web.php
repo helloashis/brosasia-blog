@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', 'App\Http\Controllers\SiteController@index')->name('index');
-
+Route::get('/{any?}', 'App\Http\Controllers\SiteController@index')->name('index');
+//Route::get('/{anypath}', 'App\Http\Controllers\SiteController@index')->where('path', '.*');
 Auth::routes();
+/*
 Route::prefix('admin')->group(base_path('routes/admin.php'));
+ */

@@ -1,23 +1,32 @@
 require('./bootstrap');
+window.Vue = require('vue').default;
+// Vue Router
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-import Vue from 'vue';
-import VueRouter from 'vue-router';
 
-Vue.use(VueRouter);
+import Index from './components/frontend/Index.vue';
+import About from './components/frontend/About.vue';
+import Contact from './components/frontend/Contact.vue';
 
-import Home from './components/Home.vue';
-import About from './components/About.vue';
-import Contact from './components/Contact.vue';
-
+//    Vue Routes
 const router = new VueRouter({
-  mode: 'history',
-  base: __dirname,
-  routes: [
-    { path: '/', component: Home },
-    { path: '/about', component: About },
-    { path: '/contact', component: Contact }
-  ]
+    mode:'history',
+    routes:[
+        { path: '/', component: Index },
+        { path: '/about', component: About },
+        { path: '/contact-us', component: Contact },
+    ]
+
 });
+
+Vue.component('index', require('./components/frontend/Index.vue').default);
+Vue.component('navbar', require('./components/frontend/navbar.vue').default);
+Vue.component('category', require('./components/frontend/category.vue').default);
+Vue.component('recent-post', require('./components/frontend/recent-post.vue').default);
+Vue.component('footer-section', require('./components/frontend/footer-section.vue').default);
+
+
 const app = new Vue({
     el: '#app',
     router

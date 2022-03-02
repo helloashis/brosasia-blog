@@ -11,7 +11,7 @@ class SiteController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		return view('welcome');
+		return view('app');
 	}
 
 	/**
