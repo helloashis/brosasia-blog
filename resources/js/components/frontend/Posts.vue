@@ -15,7 +15,7 @@
                 <div class="card mb-3">
                   <img v-bind:src="post.thumbnail" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title"><router-link :to="`/post/details/${post.slug}`">{{ post.title }}</router-link></h5>
+                    <h5 class="card-title"><router-link class="text-decoration-none" :to="`/post/details/${post.slug}`">{{ post.title }}</router-link></h5>
 
                     <p class="card-text">
                         <span v-html="subStringWithHtml(post.content, 150,'...')"></span>

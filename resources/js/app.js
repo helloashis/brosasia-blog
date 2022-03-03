@@ -26,7 +26,7 @@ const router = new VueRouter({
 
 Vue.component('index', require('./components/frontend/Index.vue').default);
 Vue.component('navbar', require('./components/frontend/navbar.vue').default);
-Vue.component('category', require('./components/frontend/category.vue').default);
+Vue.component('sub-category', require('./components/frontend/subcategory.vue').default);
 Vue.component('recent-post', require('./components/frontend/recent-post.vue').default);
 Vue.component('footer-section', require('./components/frontend/footer-section.vue').default);
 

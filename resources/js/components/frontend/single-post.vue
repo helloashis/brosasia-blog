@@ -24,7 +24,7 @@
                             <small class="badge bg-info">{{ post.subcategory.title }}</small>
                         </span>
                         <span class="col-4">
-                            <small class="text-bold text-right">Date: {{ post.created_at }}</small>
+                            <small class="text-bold text-right">Date: 2022-02-3</small>
                         </span>
                     </p>
                   </div>
@@ -42,6 +42,7 @@
 	export default{
         name: "single-post",
         data: function() {
+
             return{
                 post:{}
             }
