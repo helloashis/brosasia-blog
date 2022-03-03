@@ -68,15 +68,27 @@ class SiteController extends Controller {
 		return response()->json($post, 202);
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, $id) {
-		//
+	public function categoryWise($slug) {
+		$category = Category::where('slug', $slug)->first();
+
+		$posts = Post::with('category', 'subcategory', 'user')
+			->orderBy('id', 'DESC')
+			->where('cat_id', $category->id)
+			->orderBy('id', "DESC")
+			->get();
+
+		return response()->json($posts, 200);
+	}
+	public function subcategoryWise($slug) {
+		$subcategory = Subcategory::where('slug', $slug)->first();
+
+		$posts = Post::with('category', 'subcategory', 'user')
+			->orderBy('id', 'DESC')
+			->where('sub_cat_id', $subcategory->id)
+			->orderBy('id', "DESC")
+			->get();
+
+		return response()->json($posts, 200);
 	}
 
 	/**

@@ -10,6 +10,8 @@ import Posts from './components/frontend/Posts.vue';
 import About from './components/frontend/About.vue';
 import Contact from './components/frontend/Contact.vue';
 import single_post from './components/frontend/single-post.vue';
+import category_post from './components/frontend/Category-wise.vue';
+import subcategory_post from './components/frontend/subcategory-wise.vue';
 
 //    Vue Routes
 const router = new VueRouter({
@@ -20,6 +22,8 @@ const router = new VueRouter({
         { path: '/post/details/:slug', component: single_post },
         { path: '/about', component: About },
         { path: '/contact-us', component: Contact },
+        { path: '/category/:slug', component: category_post },
+        { path: '/subcategory-wise/:slug', component: subcategory_post },
     ]
 
 });

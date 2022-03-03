@@ -12,20 +12,18 @@
                                 <h4><router-link class="text-decoration-none" :to="`/post/details/${post.slug}`">{{ post.title }}</router-link></h4>
 
                                 <p v-html="subStringWithHtml(post.content, 150,'...')"></p>
-                                <span><router-link :to="`/post/details/${post.slug}`" class="btn btn-outline-info btn-sm">Readmore</router-link></span>
+                                <span>
+                                    <router-link :to="`/post/details/${post.slug}`" class="btn btn-outline-info btn-sm">Readmore</router-link>
+                                    <small class="badge bg-primary">{{ post.category.title }}</small>
+                            <small class="badge bg-info">{{ post.subcategory.title }}</small>
+                                </span>
 
                             </div>
                         </div>
                     </div>
                 </div>
                
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
+                
             </div>
             <div class="col-md-4">
                 <div class="card mb-2">

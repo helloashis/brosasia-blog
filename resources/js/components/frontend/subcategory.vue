@@ -9,10 +9,10 @@
 		        
 		        <li v-for="subcategory in subcategories" v-bind:key="subcategory.id" class="list-group-item d-flex justify-content-between align-items-start">
 				    <div class="ms-2 me-auto">
-				      <div class="fw-bold"><router-link class="text-decoration-none" :to="`/subcategory/${subcategory.id}`">{{ subcategory.title }}</router-link> </div>
+				      <div class="fw-bold"><router-link class="text-decoration-none" :to="`/subcategory-wise/${subcategory.slug}`">{{ subcategory.title }}</router-link> </div>
 				      <small>__{{ subcategory.category.title }}</small>
 				    </div>
-				    <span class="badge bg-primary rounded-pill">14</span>
+				    <!-- <span class="badge bg-primary rounded-pill">2</span> -->
 				  </li>
 
 		    </ul>
