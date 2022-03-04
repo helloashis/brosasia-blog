@@ -24,6 +24,6 @@ Route::get('/subcategory-wise/{slug}', 'App\Http\Controllers\SiteController@subc
 Route::get('/get-category', 'App\Http\Controllers\SiteController@getCategory');
 Route::get('/sub-category', 'App\Http\Controllers\SiteController@subCategory');
 
-//Route::get('/{anypath}', 'App\Http\Controllers\SiteController@index')->where('path', '.*');
+Route::get('/{anypath}', 'App\Http\Controllers\SiteController@index')->where('path', '.*');
 Auth::routes();
 Route::prefix('admin')->group(base_path('routes/admin.php'));

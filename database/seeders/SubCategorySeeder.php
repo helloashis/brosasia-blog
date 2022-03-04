@@ -1,10 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 
-class PostSeeder extends Seeder {
+class SubCategorySeeder extends Seeder {
 	/**
 	 * Run the database seeds.
 	 *
@@ -12,6 +12,6 @@ class PostSeeder extends Seeder {
 	 */
 	public function run() {
 
-		\App\Models\Post::factory(9)->create();
+		\App\Models\Subcategory::factory(15)->create();
 	}
 }

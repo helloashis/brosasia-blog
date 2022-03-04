@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card mb-3">
-                  <img :src="fileLink(post.thumbnail)" class="card-img-top" :alt="post.slug">
+                  <img v-bind:src="post.thumbnail" class="card-img-top" :alt="post.slug">
                   <div class="card-body">
                     <h4 class="card-title">{{ post.title }} <sub class="text-muted">posted by: <b>{{ post.user.name }}</b></sub></h4>
                     <p class="card-text">
@@ -54,13 +54,6 @@
             }
         },
         methods:{
-            fileLink: function (name) {
-                if (name !== null && name.length < 256)
-                    return '../../' + name;
-                else
-                    return this.form.thumbnail;
-            },
-            
             emptyData() {
                 return (this.post.length < 1);
             },

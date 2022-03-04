@@ -13,7 +13,7 @@
             
             <div class="col-md-4 col-lg-4" v-for="post in posts" v-bind:key="post.id">
                 <div class="card mb-3">
-                  <img :src="fileLink(post.thumbnail)" class="card-img-top" :alt="post.slug">
+                  <img v-bind:src="post.thumbnail" class="card-img-top" :alt="post.slug">
                   <div class="card-body">
                     <h5 class="card-title"><router-link class="text-decoration-none" :to="`/post/details/${post.slug}`">{{ post.title }}</router-link></h5>
 

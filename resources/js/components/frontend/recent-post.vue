@@ -10,7 +10,7 @@
 	                    <div class="card-body">
 	                        <div class="row">
 	                            <div class="col-md-4">
-	                                <img class="img-thumbnail" :src="fileLink(post.thumbnail)" alt="">
+	                                <img class="img-thumbnail" v-bind:src="post.thumbnail" alt="">
 	                            </div>
 	                            <div class="col-md-8">
 	                                <p><router-link :to="`/post/details/${post.slug}`">{{ post.title }}</router-link></p>
@@ -31,14 +31,12 @@
                 posts:{},
             }
         },
+        watch:{
+            $route(){
+                this.loadposts();
+            }
+        },
         methods:{
-        	fileLink: function (name) {
-                if (name !== null && name.length < 256)
-                    return '../../' + name;
-                else
-                    return this.form.thumbnail;
-            },
-            
             loadposts(){
                 axios.get('/posts').then((response)=>{
                     this.posts = response.data;

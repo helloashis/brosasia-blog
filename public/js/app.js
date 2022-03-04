@@ -5359,9 +5359,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    fileLink: function fileLink(name) {
-      if (name !== null && name.length < 256) return '../../' + name;else return this.form.thumbnail;
-    },
     loadposts: function loadposts() {
       var _this = this;
 
@@ -5703,10 +5700,12 @@ __webpack_require__.r(__webpack_exports__);
       posts: {}
     };
   },
+  watch: {
+    $route: function $route() {
+      this.loadposts();
+    }
+  },
   methods: {
-    fileLink: function fileLink(name) {
-      if (name !== null && name.length < 256) return '../../' + name;else return this.form.thumbnail;
-    },
     loadposts: function loadposts() {
       var _this = this;
 
@@ -5789,9 +5788,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    fileLink: function fileLink(name) {
-      if (name !== null && name.length < 256) return '../../' + name;else return this.form.thumbnail;
-    },
     emptyData: function emptyData() {
       return this.post.length < 1;
     },
@@ -29362,7 +29358,7 @@ var render = function () {
             _c("div", { staticClass: "card mb-3" }, [
               _c("img", {
                 staticClass: "card-img-top",
-                attrs: { src: _vm.fileLink(post.thumbnail), alt: post.slug },
+                attrs: { src: post.thumbnail, alt: post.slug },
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
@@ -30066,7 +30062,7 @@ var render = function () {
                   _c("div", { staticClass: "col-md-4" }, [
                     _c("img", {
                       staticClass: "img-thumbnail",
-                      attrs: { src: _vm.fileLink(post.thumbnail), alt: "" },
+                      attrs: { src: post.thumbnail, alt: "" },
                     }),
                   ]),
                   _vm._v(" "),
@@ -30162,10 +30158,7 @@ var render = function () {
         _c("div", { staticClass: "card mb-3" }, [
           _c("img", {
             staticClass: "card-img-top",
-            attrs: {
-              src: _vm.fileLink(_vm.post.thumbnail),
-              alt: _vm.post.slug,
-            },
+            attrs: { src: _vm.post.thumbnail, alt: _vm.post.slug },
           }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -30268,7 +30261,7 @@ var render = function () {
             _c("div", { staticClass: "card mb-3" }, [
               _c("img", {
                 staticClass: "card-img-top",
-                attrs: { src: _vm.fileLink(post.thumbnail), alt: post.slug },
+                attrs: { src: post.thumbnail, alt: post.slug },
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
